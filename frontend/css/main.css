@@ -1,0 +1,80 @@
+body{
+    background-color: beige;
+}
+/* Make mobile dropdown slide from the right */
+#navbarNav.collapse:not(.show) {
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+}
+
+#navbarNav.collapse.show {
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+}
+
+/* Side-section panel */
+.side-section {
+    position: fixed;
+    top: 0;
+    right: -250px; /* hidden by default */
+    width: 250px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+    transition: right 0.3s ease;
+    z-index: 1050;
+    padding: 20px;
+}
+
+/* Show panel */
+.side-section.active {
+    right: 0;
+}
+
+/* Close button inside panel (X) */
+.side-close {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #333;
+    z-index: 1100;
+}
+
+/* Side-menu links */
+.side-menu {
+    list-style: none;
+    padding: 60px 0 0 0; /* leave space for button */
+    margin: 0;
+}
+
+.side-menu li {
+    margin-bottom: 20px;
+}
+
+.side-menu li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.side-menu li a:hover {
+    color: #ff5722;
+}
+
+.page-section {
+    min-height: 100vh;      /* Full viewport height */
+    padding: 100px 20px 50px 20px; /* Space for fixed navbar/side panel */
+    background-color: #f9f5f0; /* Example background */
+    scroll-margin-top: 80px;   /* Offset for fixed elements */
+    border-bottom: 1px solid #ddd;
+}
+
+.page-section:nth-child(even) {
+    background-color: #fff;  /* Alternate background colors */
+}
