@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ChanzzZZzZz/Chili-Oil-Website/issues"
   },
-  "homepage": "https://github.com/ChanzzZZzZz/Chili-Oil-Website#readme"
+  "homepage": "https://github.com/ChanzzZZzZz/Chili-Oil-Website#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
 }
