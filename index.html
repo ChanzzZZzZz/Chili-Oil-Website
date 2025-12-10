@@ -11,47 +11,110 @@
 <body>
 
     <!-- NAVBAR -->
-    <nav class="navbar bg-light shadow p-3">
+    <nav class="navbar navbar-expand-lg bg-light shadow p-3">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="frontend/images/Chili_Oil_Logo.png" width="120" alt="Logo">
+            <a class="navbar-brand" href="#home-section">
+                <img src="frontend/images/Chili_Oil_Logo.png" alt="Logo">
             </a>
-            <button class="btn btn-light" id="menu-toggler">
+            
+            <!-- Desktop Menu (visible on screens 901px+) -->
+            <ul class="navbar-menu">
+                <li><a href="#home-section">Home</a></li>
+                <li><a href="#products-section">Products</a></li>
+                <li><a href="#about-section">About Us</a></li>
+                <li><a href="#contact-section">Contact</a></li>
+            </ul>
+
+            <!-- Mobile Menu Toggle (visible on screens below 901px) -->
+            <button class="btn btn-light menu-toggler" id="menu-toggler">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
     </nav>
 
+    <!-- OVERLAY -->
+    <div class="overlay" id="overlay"></div>
+
     <!-- SIDE PANEL -->
     <div id="side-section" class="side-section">
-        <button class="side-close" id="menu-toggler-left">&times;</button>
+        <button class="side-close" id="side-close">&times;</button>
         <ul class="side-menu">
-            <li><a href="#home-section">Home</a></li>
-            <li><a href="#products-section">Products</a></li>
-            <li><a href="#about-section">About Us</a></li>
-            <li><a href="#contact-section">Contact</a></li>
+            <li><a href="#home-section" class="menu-link">Home</a></li>
+            <li><a href="#products-section" class="menu-link">Products</a></li>
+            <li><a href="#about-section" class="menu-link">About Us</a></li>
+            <li><a href="#contact-section" class="menu-link">Contact</a></li>
         </ul>
     </div>
 
-    <!-- PAGE SECTIONS -->
-    <section id="home-section" class="page-section">
-        <h1>Home</h1>
-        <p>Welcome to The Chili Oil Company!</p>
+    <!-- HOME SECTION -->
+    <section id="home-section" class="page-section home-section">
+        <div class="container text-center">
+            <h1>🌶️ The Chili Oil Company</h1>
+            <p>Handcrafted artisan chili oils that bring heat and flavor to every meal. Made with love, spice, and everything nice.</p>
+        </div>
     </section>
 
-    <section id="products-section" class="page-section">
-        <h1>Products</h1>
-        <p>Here are our delicious chili oils and sauces.</p>
+    <!-- PRODUCTS SECTION -->
+    <section id="products-section" class="page-section products-section">
+        <div class="container text-center">
+            <h1>Our Products</h1>
+            <p>Explore our signature collection of premium chili oils</p>
+            <div class="row products-grid mt-5">
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <div class="product-card">
+                        <h3>Classic Crispy Chili</h3>
+                        <p>Our original recipe with perfectly crispy garlic and shallots in premium oil.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <div class="product-card">
+                        <h3>Spicy Szechuan</h3>
+                        <p>Numbing and spicy with authentic Szechuan peppercorns and chili flakes.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <div class="product-card">
+                        <h3>Mild & Sweet</h3>
+                        <p>A gentle heat balanced with caramelized onions and a hint of sweetness.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <div class="product-card">
+                        <h3>Extra Hot Inferno</h3>
+                        <p>For the brave souls who crave extreme heat and intense flavor.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="about-section" class="page-section">
-        <h1>About Us</h1>
-        <p>Learn more about our company and mission.</p>
+    <!-- ABOUT SECTION -->
+    <section id="about-section" class="page-section about-section">
+        <div class="container text-center">
+            <h1>About Us</h1>
+            <p>Founded by chili enthusiasts, we're passionate about creating the perfect balance of heat, crunch, and flavor. Each batch is carefully crafted using traditional methods and the finest ingredients sourced from local farms.</p>
+            <p class="mt-4">Our mission is to bring authentic, handcrafted chili oil to tables around the world, one bottle at a time.</p>
+        </div>
     </section>
 
-    <section id="contact-section" class="page-section">
-        <h1>Contact</h1>
-        <p>Get in touch with us!</p>
+    <!-- CONTACT SECTION -->
+    <section id="contact-section" class="page-section contact-section">
+        <div class="container text-center">
+            <h1>Get In Touch</h1>
+            <p>Have questions or want to place a custom order? We'd love to hear from you!</p>
+            <form class="contact-form mx-auto mt-5">
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" placeholder="Your Email" required>
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Send Message</button>
+            </form>
+        </div>
     </section>
 
     <!-- SCRIPTS -->
