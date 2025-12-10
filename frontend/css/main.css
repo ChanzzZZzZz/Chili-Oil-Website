@@ -6,9 +6,20 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f5e6d3;
     overflow-x: hidden;
+}
+
+h1, h2, h3, p {
+  font-family: 'Caveat', cursive;
+}
+
+nav{
+  font-family: 'Lato', sans-serif;
+}
+
+p {
+    font-size: 1.5rem;
 }
 
 /* Navbar Styles */
@@ -21,7 +32,8 @@ body {
 }
 
 .navbar-brand img {
-    height: 50px;
+    width: 90px;
+    height: auto;
 }
 
 .menu-toggler {
@@ -47,7 +59,7 @@ body {
     text-decoration: none;
     color: #333;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 20px;
     transition: color 0.3s ease;
     position: relative;
 }
@@ -201,6 +213,15 @@ body {
     animation: fadeInUp 1s ease;
 }
 
+.page-section h2 {
+    font-size: 1.3rem;
+    max-width: 700px;
+    line-height: 1.8;
+    animation: fadeInUp 1s ease 0.2s backwards;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .page-section p {
     font-size: 1.3rem;
     max-width: 700px;
@@ -212,8 +233,8 @@ body {
 
 /* Home Section */
 .home-section {
-    background: linear-gradient(135deg, #ff6b6b 0%, #d32f2f 100%);
-    color: white;
+    background: beige;
+    color: orangered;
 }
 
 /* Products Section */
