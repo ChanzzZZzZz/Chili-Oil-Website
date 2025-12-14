@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - The Chili Oil Company</title>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="frontend/images/Chili_Oil_Logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/frontend/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/frontend/css/main.css">
+    <link rel="stylesheet" href="/frontend/css/cart.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-light shadow p-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="/frontend/images/Chili_Oil_Logo_Background.png" alt="Logo">
+            </a>
+            
+            <!-- Desktop Menu (visible on screens 901px+) -->
+            <ul class="navbar-menu">
+                <li><a href="index.html#home-section">Home</a></li>
+                <li><a href="index.html#products-section">Products</a></li>
+                <li><a href="index.html#about-section">About Us</a></li>
+                <li><a href="index.html#contact-section">Contact</a></li>
+                <li><a href="#" class="account-link"><i class="fas fa-user-circle"></i> Account</a></li>
+                <li>
+                    <a href="cart.html" class="cart-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cart-badge">0</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Mobile Menu Toggle (visible on screens below 901px) -->
+            <button class="btn btn-light menu-toggler" id="menu-toggler">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="overlay" id="overlay"></div>
+
+    <!-- SIDE PANEL -->
+    <div id="side-section" class="side-section">
+        <button class="side-close" id="side-close">&times;</button>
+        <ul class="side-menu">
+            <li><a href="index.html#home-section" class="menu-link">Home</a></li>
+            <li><a href="index.html#products-section" class="menu-link">Products</a></li>
+            <li><a href="index.html#about-section" class="menu-link">About Us</a></li>
+            <li><a href="index.html#contact-section" class="menu-link">Contact</a></li>
+            <li>
+                <a href="cart.html" class="cart-link">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge" id="cart-badge">0</span>
+                </a>
+            </li>
+            <li><a href="#" class="account-link"><i class="fas fa-user-circle"></i></a></li>
+        </ul>
+    </div>
+
+    <!-- CART CONTENT -->
+    <main class="cart-page">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="cart-title mb-4">Shopping Cart</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Cart Items Section -->
+                <div class="col-lg-8">
+                    <div class="cart-items-container">
+                        <!-- Empty Cart Message -->
+                        <div id="empty-cart" class="empty-cart-message">
+                            <i class="fas fa-shopping-cart fa-4x mb-3"></i>
+                            <h3>Your cart is empty</h3>
+                            <p>Add some delicious chili oil to get started!</p>
+                            <a href="index.html#products-section" class="btn btn-primary mt-3">
+                                Browse Products
+                            </a>
+                        </div>
+
+                        <!-- Cart Items (populated by JavaScript) -->
+                        <div id="cart-items"></div>
+                    </div>
+                </div>
+
+                <!-- Cart Summary Section -->
+                <div class="col-lg-4">
+                    <div id="cart-summary" class="cart-summary" style="display: none;">
+                        <h4 class="mb-4">Order Summary</h4>
+                        
+                        <div class="summary-row">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">₱0.00</span>
+                        </div>
+                        
+                        <div class="summary-row">
+                            <span>Tax (12%):</span>
+                            <span id="tax">₱0.00</span>
+                        </div>
+                        
+                        <hr>
+                        
+                        <div class="summary-row total-row">
+                            <span><strong>Total:</strong></span>
+                            <span id="total"><strong>₱0.00</strong></span>
+                        </div>
+
+                        <button class="btn btn-primary btn-lg w-100 mt-4">
+                            Proceed to Checkout
+                        </button>
+
+                        <a href="index.html#products-section" class="btn btn-outline-secondary w-100 mt-2">
+                            Continue Shopping
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER (Optional) -->
+    <footer class="bg-light py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2024 The Chili Oil Company. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="/frontend/frontend_js/bootstrap.bundle.min.js"></script>
+    <script src="/frontend/frontend_js/cart.js"></script>
+</body>
+</html>

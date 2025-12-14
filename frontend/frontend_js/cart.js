@@ -17,7 +17,6 @@ class NavigationMenu {
     attachEventListeners() {
         // Open side menu
         if (this.menuToggler) {
-            
             this.menuToggler.addEventListener('click', () => this.openMenu());
         }
 
@@ -118,12 +117,47 @@ class ContactForm {
     }
 }
 
+// Cart Badge Class
+class CartBadge {
+    constructor() {
+        this.init();
+    }
+
+    init() {
+        this.updateBadge();
+        // Listen for storage changes from other tabs/windows
+        window.addEventListener('storage', (e) => {
+            if (e.key === 'chiliOilCart') {
+                this.updateBadge();
+            }
+        });
+    }
+
+    updateBadge() {
+        const savedCart = localStorage.getItem('chiliOilCart');
+        const cartItems = savedCart ? JSON.parse(savedCart) : [];
+        const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+        
+        const badges = document.querySelectorAll('.cart-badge');
+        
+        badges.forEach(badge => {
+            badge.textContent = totalItems;
+            if (totalItems === 0) {
+                badge.style.display = 'none';
+            } else {
+                badge.style.display = 'flex';
+            }
+        });
+    }
+}
+
 // Application Class - Main Controller
 class ChiliOilApp {
     constructor() {
         this.navigationMenu = null;
         this.smoothScroll = null;
         this.contactForm = null;
+        this.cartBadge = null;
         
         this.init();
     }
@@ -141,6 +175,7 @@ class ChiliOilApp {
         this.navigationMenu = new NavigationMenu();
         this.smoothScroll = new SmoothScroll();
         this.contactForm = new ContactForm();
+        this.cartBadge = new CartBadge();
         
         console.log('Chili Oil App initialized successfully!');
     }
